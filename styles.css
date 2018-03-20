@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,600");
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html {
+  font-size: 10px; }
+
+body {
+  margin: 0;
+  background-color: #22282e;
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #333; }
+
+ul {
+  padding-left: 2rem;
+  margin: 0; }
+
+li, p, button {
+  font-size: 1.6rem; }
+
+h1, h2, h3 {
+  font-weight: 400; }
+
+h4 {
+  font-weight: 600; }
+
+h1 {
+  font-size: 3.6rem;
+  margin-top: 1.2rem;
+  margin-bottom: 1rem; }
+
+h2 {
+  font-size: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 0.8rem; }
+
+h3 {
+  font-size: 2.4rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.6rem; }
+
+h4 {
+  font-size: 1.8rem;
+  margin-top: 0.6rem;
+  margin-bottom: 0.4rem; }
+
+p {
+  margin: 0; }
+
+a {
+  display: block; }
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+
+.side-nav {
+  margin-right: 1rem;
+  background-color: #22282e; }
+
+.side-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.content-box {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  padding: 2rem;
+  color: #E8E8E8;
+  background-color: #485561; }
+
+.side-nav, .content-box {
+  height: 100vh;
+  overflow-y: scroll; }
+
+.content-box h4::before {
+  content: "-";
+  margin-right: 0.5rem; }
+
+.content-box h4.checklist-title::before {
+  display: none; }
+
+.accent-verwijzing {
+  color: #E8E8E8;
+  display: inline; }
+  .accent-verwijzing:hover {
+    background-color: #8c54c4; }
+
+.niveau, .onderwerp, .accent {
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background-color: #485561;
+  color: #E8E8E8;
+  -webkit-transition: 0.1s;
+  -o-transition: 0.1s;
+  transition: 0.1s; }
+  .niveau:hover, .onderwerp:hover, .accent:hover {
+    cursor: pointer;
+    background-color: #5e6f7e; }
+
+.niveau {
+  padding: 2rem 2.4rem;
+  font-weight: 500;
+  font-size: 2.4rem;
+  margin-bottom: 0.8rem; }
+  .niveau:hover {
+    cursor: auto;
+    background-color: #485561; }
+
+.onderwerp {
+  padding: 1.6rem 2rem;
+  margin-left: 1rem;
+  font-size: 2rem;
+  border-left: 6px solid #009933;
+  margin-bottom: 0.8rem; }
+
+.level {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 2rem;
+  margin-bottom: 0.8rem;
+  border-left: 6px solid #8c54c4; }
+
+.accent {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  padding: 1rem 2rem;
+  text-align: center;
+  border-right: 2px solid #22282e;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  margin-right: 0; }
+  .accent:last-child {
+    border-right: none; }
+
+.menu-item.active {
+  -webkit-box-shadow: 0 0 0 3px rgba(232, 232, 232, 0.8) inset;
+  box-shadow: 0 0 0 3px rgba(232, 232, 232, 0.8) inset; }
+
+.niveau, .onderwerp, .accent {
+  position: relative; }
+  .niveau span, .onderwerp span, .accent span {
+    padding: 1.5rem;
+    width: 0;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    position: absolute;
+    font-size: 1.8rem;
+    top: 50%;
+    right: 2rem;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-transition: 0.1s;
+    -o-transition: 0.1s;
+    transition: 0.1s;
+    display: none; }
+    .niveau span:hover, .onderwerp span:hover, .accent span:hover {
+      background-color: rgba(255, 255, 255, 0.35); }
