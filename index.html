@@ -10,22 +10,29 @@
   </head>
   <body>
     <div id="app">
-      <nav></nav>
+      <nav>
+        <div class="side-nav-mobile-button"> <i class="fas fa-bars"></i></div>
+        <div class="nav-title">
+          <h2>Volleybal trainingsschema</h2>
+        </div>
+      </nav>
       <main>
         <div class="side-nav">
           <ul>
-            <li class="niveaus" v-for="niveau in niveaus"> <a class="niveau" v-bind:data-id="niveau.id">{{niveau.name}}<span><i class="fas fa-chevron-down"></i></span></a>
+            <li class="niveaus" v-for="niveau in niveaus"> <a class="niveau" v-bind:data-id="niveau.id"> <span>{{niveau.name}}</span></a>
               <ul>
-                <li class="onderwerpen" v-for="onderwerp in niveau.onderwerpen"> <a class="onderwerp menu-item" v-bind:data-id="onderwerp.id">{{onderwerp.name}}<span><i class="fas fa-chevron-down"></i></span></a>
+                <li class="onderwerpen" v-for="onderwerp in niveau.onderwerpen"> <a class="onderwerp menu-item" v-bind:data-id="onderwerp.id"> <span>{{onderwerp.name}}</span></a>
                   <ul>
-                    <li class="level" v-for="level in onderwerp.accenten"><a class="accent menu-item" v-for="accent in level" v-bind:data-id="accent.id">{{accent.name}}</a></li>
+                    <li class="level" v-for="level in onderwerp.accenten"><a class="accent menu-item" v-for="accent in level" v-bind:data-id="accent.id"> <span>{{accent.name}}</span></a></li>
                   </ul>
                 </li>
               </ul>
             </li>
           </ul>
         </div>
-        <div class="content-box"></div>
+        <div class="content-box">
+          <p>Intro tekst</p>
+        </div>
       </main>
     </div>
     <script src="main-dist.js"></script>
