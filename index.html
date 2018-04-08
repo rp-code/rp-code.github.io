@@ -4,37 +4,21 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>Document</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"/>
-    <link rel="stylesheet" href="styles.css"/>
+    <title>Volleybal Training Assistent</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,600"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="css/styles.css"/>
   </head>
   <body>
-    <div id="app">
-      <nav>
-        <div class="side-nav-mobile-button"> <i class="fas fa-bars"></i></div>
-        <div class="nav-title">
-          <h2>Volleybal trainingsschema</h2>
-        </div>
+    <header><a class="mobile-menu-button" href="#"><i class="fas fa-bars"></i></a><a class="inleiding-button active" href="#"><i class="fas fa-info"></i> </a>
+      <h2 class="title"><span>Volleybal Training Assistent</span></h2>
+    </header>
+    <main>
+      <nav class="side-nav">
+        <div class="niveaus"></div>
       </nav>
-      <main>
-        <div class="side-nav">
-          <ul>
-            <li class="niveaus" v-for="niveau in niveaus"> <a class="niveau" v-bind:data-id="niveau.id"> <span>{{niveau.name}}</span></a>
-              <ul>
-                <li class="onderwerpen" v-for="onderwerp in niveau.onderwerpen"> <a class="onderwerp menu-item" v-bind:data-id="onderwerp.id"> <span>{{onderwerp.name}}</span></a>
-                  <ul>
-                    <li class="level" v-for="level in onderwerp.accenten"><a class="accent menu-item" v-for="accent in level" v-bind:data-id="accent.id"> <span>{{accent.name}}</span></a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <div class="content-box">
-          <p>Intro tekst</p>
-        </div>
-      </main>
-    </div>
-    <script src="main-dist.js"></script>
+      <div class="text-area"></div>
+    </main>
+    <script src="js/main.js"></script>
   </body>
 </html>
