@@ -14,23 +14,10 @@
   // Page build functions
   // --------------------------------------*/
   function build() {
-    appendNiveaus();
-    appendOnderwerpen();
-    appendAccenten();
+
+    buildSideNav();
 
     addEventListeners();
-
-    getEl(".mobile-menu-button").addEventListener("click", function () {
-      if (mobileMenuOpen) {
-        closeMobileMenu();
-      } else {
-        openMobileMenu();
-      }
-    });
-
-    getEl(".content").addEventListener("click", function () {
-      closeMobileMenu();
-    });
 
     getAllEl(".vouw-button").forEach(function (listObj) {
       listObj.addEventListener("click", function () {
@@ -48,6 +35,16 @@
         }
       });
     });
+  } // end build ()
+
+  function buildSideNav() {
+    appendNiveaus();
+    appendOnderwerpen();
+    appendAccenten();
+  }
+
+  function emptySideNav() {
+    getEl(".niveaus").innerHTML = "";
   }
 
   function openMobileMenu() {
@@ -66,6 +63,13 @@
 
   function appendNiveaus() {
     getEl(".niveaus").innerHTML += createNiveau(niveaus[huidigNiveau].name, huidigNiveau);
+    for (var niveau in niveaus) {
+      if (niveaus.hasOwnProperty(niveau)) {
+        if (niveau !== huidigNiveau) {
+          getEl(".niveaus-drop").innerHTML += createNiveauDropItem(niveaus[niveau].name, niveau);
+        }
+      }
+    }
   }
 
   function appendOnderwerpen() {
@@ -97,12 +101,39 @@
   }
 
   function addEventListeners() {
+
+    addSideNavListeners();
+
+    getEl(".mobile-menu-button").addEventListener("click", function () {
+      if (mobileMenuOpen) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    });
+
+    getEl(".content").addEventListener("click", function () {
+      closeMobileMenu();
+    });
+  }
+
+  function addSideNavListeners() {
     var niveauElements = getAllEl(".niveau");
     niveauElements.forEach(function (listObj) {
       listObj.addEventListener("click", function () {
         closeMobileMenu();
         var niveauName = this.getAttribute("data-name");
         changeText(this, niveauName, "niveau");
+      });
+    });
+    var niveauDropItems = getAllEl(".niveau-drop-item");
+    niveauDropItems.forEach(function (listObj) {
+      listObj.addEventListener("click", function () {
+        var niveauDropItemName = this.getAttribute("data-name");
+        huidigNiveau = niveauDropItemName;
+        emptySideNav();
+        buildSideNav();
+        addSideNavListeners();
       });
     });
     var onderwerpElements = getAllEl(".onderwerp");
@@ -152,11 +183,6 @@
     addRedirectListeners();
   }
 
-  function changeNiveau() {
-    getEl(".niveaus").innerHTML = "";
-    getEl(".niveaus").innerHTML += createNiveau(niveaus[huidigNiveau].name, huidigNiveau);
-  }
-
   function crumbBread(menuItem, type) {
     var breadcrumbs = getEl(".breadcrumbs");
     if (type === "niveau") {
@@ -184,7 +210,11 @@
   // Element builders
   // --------------------------------------*/
   function createNiveau(niveauName, key) {
-    return "<div class='niveau-wrap'><button class='nav-item niveau' data-name='" + key + "'><div class='nav-item-title'><h3>" + niveauName + "</h3></div></button><button class='niveau-toggle'><i class='fas fa-exchange-alt'></i></button></div><div class='onderwerpen' data-name='" + key + "'></div>";
+    return "<div class='niveau-wrap'><div class='niveau-item'><button class='nav-item niveau' data-name='" + key + "'><div class='nav-item-title'><h3>" + niveauName + "</h3></div></button><button class='niveau-toggle'><i class='fas fa-exchange-alt'></i></button></div><div class='niveaus-drop'></div></div><div class='onderwerpen' data-name='" + key + "'></div>";
+  }
+
+  function createNiveauDropItem(niveauName, key) {
+    return "<div class='niveau-drop-item-wrap'><button class='niveau-drop-item' data-name='" + key + "'><span>" + niveauName + "</span></button></div>";
   }
 
   function createOnderwerp(onderwerpName, key) {
@@ -199,7 +229,12 @@
   // Common functions
   // --------------------------------------*/
   function getAllEl(selector) {
-    return document.querySelectorAll(selector);
+    var foundEl = document.querySelectorAll(selector);
+    if (foundEl == null) {
+      throw new Error("getElAll(" + selector + ") returned null");
+    } else {
+      return document.querySelectorAll(selector);
+    }
   }
 
   function getEl(selector) {
