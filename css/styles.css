@@ -231,6 +231,7 @@ header {
       font-size: 1.8rem;
       display: inline-block; }
       .niveaus-drop .niveau-drop-item-wrap .niveau-drop-item span::before {
+        font-size: 1rem;
         content: "\25FC";
         color: #f24333;
         margin-right: 0.8rem; }

@@ -18,23 +18,6 @@
     buildSideNav();
 
     addEventListeners();
-
-    getAllEl(".vouw-button").forEach(function (listObj) {
-      listObj.addEventListener("click", function () {
-        var parentOnderwerp = listObj.parentElement;
-        var parentOnderwerpName = parentOnderwerp.querySelector(".nav-item.onderwerp").getAttribute("data-name");
-        var targetAccenten = document.querySelector(".accenten[data-name=" + parentOnderwerpName + "]");
-        if (targetAccenten.classList.contains("collapsed")) {
-          targetAccenten.classList.remove("collapsed");
-          listObj.querySelector("i").classList.add("fa-chevron-up");
-          listObj.querySelector("i").classList.remove("fa-chevron-down");
-        } else {
-          targetAccenten.classList.add("collapsed");
-          listObj.querySelector("i").classList.remove("fa-chevron-up");
-          listObj.querySelector("i").classList.add("fa-chevron-down");
-        }
-      });
-    });
   } // end build ()
 
   function buildSideNav() {
@@ -150,6 +133,23 @@
         closeMobileMenu();
         var accentName = this.getAttribute("data-name");
         changeText(this, accentName, "accent");
+      });
+    });
+
+    getAllEl(".vouw-button").forEach(function (listObj) {
+      listObj.addEventListener("click", function () {
+        var parentOnderwerp = listObj.parentElement;
+        var parentOnderwerpName = parentOnderwerp.querySelector(".nav-item.onderwerp").getAttribute("data-name");
+        var targetAccenten = document.querySelector(".accenten[data-name=" + parentOnderwerpName + "]");
+        if (targetAccenten.classList.contains("collapsed")) {
+          targetAccenten.classList.remove("collapsed");
+          listObj.querySelector("i").classList.add("fa-chevron-up");
+          listObj.querySelector("i").classList.remove("fa-chevron-down");
+        } else {
+          targetAccenten.classList.add("collapsed");
+          listObj.querySelector("i").classList.remove("fa-chevron-up");
+          listObj.querySelector("i").classList.add("fa-chevron-down");
+        }
       });
     });
   }
