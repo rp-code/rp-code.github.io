@@ -14,7 +14,6 @@
   // Page build functions
   // --------------------------------------*/
   function build() {
-
     buildSideNav();
 
     addEventListeners();
@@ -85,7 +84,6 @@
   }
 
   function addEventListeners() {
-
     addSideNavListeners();
 
     getEl(".mobile-menu-button").addEventListener("click", function () {
@@ -167,6 +165,7 @@
   function addRedirectListeners() {
     var redirectLinks = getAllEl("a.text-verwijzing");
     redirectLinks.forEach(function (listObj) {
+      console.log(listObj);
       listObj.addEventListener("click", function () {
         var accentName = this.getAttribute("data-name");
         changeText(this, accentName, this.getAttribute("data-target-type"));
