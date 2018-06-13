@@ -28,6 +28,7 @@
 
   function emptySideNav() {
     getEl(".niveaus").innerHTML = "";
+    getEl(".niveaus-drop").innerHTML = "";
   }
 
   function openMobileMenu() {
@@ -109,11 +110,20 @@
         changeText(this, niveauName, "niveau");
       });
     });
+    getEl(".niveau-toggle").addEventListener("click", function () {
+      toggleModal();
+    });
+    getEl(".overlay").addEventListener("click", function (e) {
+      if (e.target.className === "overlay") {
+        toggleModal();
+      }
+    });
     var niveauDropItems = getAllEl(".niveau-drop-item");
     niveauDropItems.forEach(function (listObj) {
       listObj.addEventListener("click", function () {
         var niveauDropItemName = this.getAttribute("data-name");
         huidigNiveau = niveauDropItemName;
+        toggleModal();
         emptySideNav();
         buildSideNav();
         addSideNavListeners();
@@ -152,7 +162,7 @@
         }
       });
     });
-  }
+  } // End addSideNavListeners
 
   function addRedirectListeners() {
     var redirectLinks = getAllEl("a.text-verwijzing");
@@ -206,11 +216,21 @@
     }
   }
 
+  function toggleModal() {
+    var modalElement = getEl(".overlay");
+
+    if (modalElement.style.display === "flex") {
+      modalElement.style.display = "none";
+    } else {
+      modalElement.style.display = "flex";
+    }
+  }
+
   /* ----------------------------------------
   // Element builders
   // --------------------------------------*/
   function createNiveau(niveauName, key) {
-    return "<div class='niveau-wrap'><div class='niveau-item'><button class='nav-item niveau' data-name='" + key + "'><div class='nav-item-title'><h3>" + niveauName + "</h3></div></button><button class='niveau-toggle'><i class='fas fa-exchange-alt'></i></button></div><div class='niveaus-drop'></div></div><div class='onderwerpen' data-name='" + key + "'></div>";
+    return "<div class='niveau-wrap'><div class='niveau-item'><button class='nav-item niveau' data-name='" + key + "'><div class='nav-item-title'><h3>" + niveauName + "</h3></div></button><button class='niveau-toggle'><i class='fas fa-exchange-alt'></i></button></div></div><div class='onderwerpen' data-name='" + key + "'></div>";
   }
 
   function createNiveauDropItem(niveauName, key) {
