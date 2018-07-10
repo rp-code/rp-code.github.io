@@ -6,7 +6,7 @@
   var onderwerpen = vtaTextNodes.onderwerpen;
   var accenten = vtaTextNodes.accenten;
 
-  var huidigNiveau = "basis";
+  var huidigNiveau = "inleiding";
 
   var mobileMenuOpen = false;
 
@@ -266,4 +266,6 @@
   }
 
   build();
+
+  window.history.replaceState("Home", null, "");
 })();
