@@ -21,7 +21,7 @@ importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox
 self.__precacheManifest = [
   {
     "url": "404.html",
-    "revision": "363e59f491d9f4140d371fa93a941d8f"
+    "revision": "29a4ec5876d80a67a7c7ef8839f82ff5"
   },
   {
     "url": "android-chrome-192x192.png",
@@ -72,16 +72,16 @@ self.__precacheManifest = [
     "revision": "96e584c7b994a13aa55791c93c33f368"
   },
   {
-    "url": "assets/js/app.bcbc8fac.js",
-    "revision": "7a6ac3f5777eac043ae7c355a8697124"
+    "url": "assets/js/app.7ee97522.js",
+    "revision": "7a125f30e5577666f75c68425b469ebb"
   },
   {
     "url": "basis/index.html",
-    "revision": "3a61c163a93a0de71061e534b07513b4"
+    "revision": "ab6ba6babf8ba5bb108d70c111357c48"
   },
   {
     "url": "basis/onderhands/index.html",
-    "revision": "14885275b67d10a137d09ae1d4c8a4f2"
+    "revision": "e1db0fb2c7aab79121e91ea5cc75e85f"
   },
   {
     "url": "favicon-16x16.png",
@@ -101,7 +101,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "78373503ac0b6d68aff832a4c6c2eb02"
+    "revision": "aff2d510b0036a3d3ffc666d3389cb46"
   },
   {
     "url": "mstile-144x144.png",
@@ -129,11 +129,11 @@ self.__precacheManifest = [
   },
   {
     "url": "trainer/index.html",
-    "revision": "292a6620bee8b4eb93813b57e5e1b09b"
+    "revision": "3990133cc4dd8d0da186aec933c343ac"
   },
   {
     "url": "votras/index.html",
-    "revision": "2fc42d8398557318779e6e02fb331167"
+    "revision": "6e703c06091a857bf667c0d9d6afe9fa"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
