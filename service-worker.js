@@ -21,7 +21,7 @@ importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox
 self.__precacheManifest = [
   {
     "url": "404.html",
-    "revision": "00ca61461f82cdc8e6c38124c8882ce1"
+    "revision": "363e59f491d9f4140d371fa93a941d8f"
   },
   {
     "url": "android-chrome-192x192.png",
@@ -36,8 +36,8 @@ self.__precacheManifest = [
     "revision": "41618ba5d3e62f44bc3f49b7893ec2e3"
   },
   {
-    "url": "assets/css/0.styles.06496b41.css",
-    "revision": "a06c86a17896e7ef41e5d895257e2b4a"
+    "url": "assets/css/0.styles.f9d8d314.css",
+    "revision": "65574980548ff3ad5df944963e16b1ca"
   },
   {
     "url": "assets/img/search.83621669.svg",
@@ -60,28 +60,28 @@ self.__precacheManifest = [
     "revision": "090722b26bf1be86f6ac6fbe90c14724"
   },
   {
-    "url": "assets/js/6.5c84d570.js",
-    "revision": "dd2c59a9f62b4cedb9af827dce717ed6"
+    "url": "assets/js/6.a4aef529.js",
+    "revision": "1ce96f4115820c32c5f59c4ab7a9f607"
   },
   {
-    "url": "assets/js/7.bb62e796.js",
-    "revision": "7d36c0abd2c4b7b623648adb28d89abe"
+    "url": "assets/js/7.ba22acb3.js",
+    "revision": "bd538ea52e99562be28f25824175999c"
   },
   {
     "url": "assets/js/8.406f8927.js",
     "revision": "96e584c7b994a13aa55791c93c33f368"
   },
   {
-    "url": "assets/js/app.0e82b6c7.js",
-    "revision": "bcb679510b4e1e9911cee02795ba4225"
+    "url": "assets/js/app.bcbc8fac.js",
+    "revision": "7a6ac3f5777eac043ae7c355a8697124"
   },
   {
     "url": "basis/index.html",
-    "revision": "063b8b5adcf9840e69cd5767dac35279"
+    "revision": "3a61c163a93a0de71061e534b07513b4"
   },
   {
     "url": "basis/onderhands/index.html",
-    "revision": "fec5cae1ee753724c5f30da69ae1ac38"
+    "revision": "14885275b67d10a137d09ae1d4c8a4f2"
   },
   {
     "url": "favicon-16x16.png",
@@ -101,7 +101,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "aa13166c737346601a933cf299f6f53e"
+    "revision": "78373503ac0b6d68aff832a4c6c2eb02"
   },
   {
     "url": "mstile-144x144.png",
@@ -129,11 +129,11 @@ self.__precacheManifest = [
   },
   {
     "url": "trainer/index.html",
-    "revision": "b14710daf1fc17acf03a63add25facaf"
+    "revision": "292a6620bee8b4eb93813b57e5e1b09b"
   },
   {
     "url": "votras/index.html",
-    "revision": "a55b32eacbc4747145b5e757fd723ec9"
+    "revision": "2fc42d8398557318779e6e02fb331167"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
